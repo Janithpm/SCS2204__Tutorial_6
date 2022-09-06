@@ -8,9 +8,9 @@ object Main {
         temp 
     }
     
-    def E(c: Char, key: Int, a: String) = a(shift(1, a.indexOf(c.toUpper), 5, a.size))
+    def E(c: Char, key: Int, a: String) = a(shift(1, a.indexOf(c.toUpper), key, a.size))
 
-    def D(c: Char, key: Int, a: String) = a(shift(-1, a.indexOf(c.toUpper), 5, a.size))
+    def D(c: Char, key: Int, a: String) = a(shift(-1, a.indexOf(c.toUpper), key, a.size))
 
     def cipher(algo: (Char, Int, String) => Char, s: String, key: Int, a: String) = s.map(algo(_, key, a))
 
