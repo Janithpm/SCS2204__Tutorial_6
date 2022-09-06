@@ -1,6 +1,7 @@
 object Main {
-    val alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ .,"
-    
+    val ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ .,"
+    val KEY = 5
+
     def shift(dir: Int, idx: Int, key: Int, asize: Int) = {
         var temp = (idx + dir * key) % asize
         if(temp < 0) temp = temp + asize
@@ -16,11 +17,11 @@ object Main {
     def main(args: Array[String]) = {
         val text = "Hello, Functional Programming."
 
-        val ct = cipher(E, text, 5, alphabet)
-        println(ct)
+        val ct = cipher(E, text, KEY, ALPHABET)
+        println("\nCiper text : " + ct + "\n")
 
-        val pt = cipher(D, ct, 5, alphabet)
-        println(pt)
+        val pt = cipher(D, ct, KEY, ALPHABET)
+        println("Original text : " + pt)
         
     }
 }
